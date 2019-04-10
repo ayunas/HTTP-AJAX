@@ -20,7 +20,6 @@ class App extends Component {
     axios.get('http://localhost:5000/friends')
     
       .then( response => {
-        console.log(response);
         this.setState({
           friends : response.data
         })
@@ -34,7 +33,12 @@ class App extends Component {
           These are my friends
       </header>
         {this.state.friends.map( friend => {
-          return <Route path='/' render={ props => <Friend {...props} friends={this.state.friends} />} />;
+          return <Route path='/' 
+          render={ props => <Friend {...props} 
+          friends={this.state.friends} 
+          id={friend.id}
+          />} 
+          />;
         } )}
       </div>
     );

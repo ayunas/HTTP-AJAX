@@ -3,8 +3,8 @@ import './components.css';
 
 
 const Friend = (props) => {
-    console.log(props);
-    return <div>I'm a friend</div>
+    console.log(props.id);
+    return <div>{'hello'}</div>
 }
 
 export default Friend;
