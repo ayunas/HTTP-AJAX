@@ -1,25 +1,30 @@
 import React, { Component } from 'react';
 import './App.css';
+import axios from 'axios';
+
 
 class App extends Component {
   constructor() {
     super();
 
     this.state = {
-      data : []
+      friends : []
     }
 
   }
 
 
   componentDidMount() {
-
-    this.setState({
-      data : ['test','test1','test2']
-    })
-
+    
+    axios.get('http://localhost:5000/friends')
+    
+      .then( response => {
+        console.log(response);
+        this.setState({
+          friends : response.data
+        })
+      })
   }
-
 
 
   render() {
