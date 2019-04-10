@@ -20,7 +20,6 @@ class App extends Component {
                   {michelle: 'https://media.licdn.com/dms/image/C5603AQFsSKGzn7EllA/profile-displayphoto-shrink_800_800/0?e=1560384000&v=beta&t=HLdY6Js3bXCT7XNeFGC8WzM_xMUZK7MAahq6uLGg-60'},
                   {luis: 'https://dl.airtable.com/NNQSNgNDTfeeGuMGk9v4_luis.jpg'}
                 ]
-                
     }
   }
 
@@ -39,7 +38,7 @@ class App extends Component {
     return (
       <div className="App">
       <header className="App-header">
-          These are my friends!
+          These are my Lambda School Colleages!
       </header>
         {this.state.friends.map( friend => {
           return <Route path='/' 
