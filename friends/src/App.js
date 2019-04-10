@@ -34,7 +34,7 @@ class App extends Component {
           These are my friends
       </header>
         {this.state.friends.map( friend => {
-          return <Route path='/' component={Friend}/>;
+          return <Route path='/' render={ props => <Friend {...props} friends={this.state.friends} />} />;
         } )}
       </div>
     );
