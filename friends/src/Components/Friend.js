@@ -3,8 +3,10 @@ import './components.css';
 
 
 const Friend = (props) => {
-    console.log(props.id);
-    return <div>{'hello'}</div>
+    let id = (props.id - 1);
+    console.log(props.friends[id].name);
+
+    return <div>{props.friends[id].name}</div>
 }
 
 export default Friend;
