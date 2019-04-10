@@ -30,7 +30,7 @@ class App extends Component {
     return (
       <div className="App">
       <header className="App-header">
-          These are my friends
+          These are my friends!
       </header>
         {this.state.friends.map( friend => {
           return <Route path='/' 

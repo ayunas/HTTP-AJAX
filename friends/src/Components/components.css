@@ -11,3 +11,14 @@ div {
 
 
 
+address {
+    display: flex;
+    flex-direction: column;
+    border: 5px solid white;
+    margin: 10px;
+    padding: 10px;
+}
+
+
+
+
