@@ -30,10 +30,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
+      <header className="App-header">
           These are my friends
-        </header>
-        <Route path='/' component={Friend}/>
+      </header>
+        {this.state.friends.map( friend => {
+          return <Route path='/' component={Friend}/>;
+        } )}
       </div>
     );
   }
