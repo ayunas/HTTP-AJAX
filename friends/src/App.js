@@ -10,7 +10,6 @@ import AddFriend from './Components/AddFriend';
 class App extends Component {
   constructor() {
     super();
-
     this.state = {
       friends : [],
       avatars : [ 
@@ -20,13 +19,27 @@ class App extends Component {
                   {sean: 'https://media.licdn.com/dms/image/C4E03AQHRE37r5NHxQQ/profile-displayphoto-shrink_800_800/0?e=1560384000&v=beta&t=ShcISrAVc6zYMDlzgEpO_MOqlzuEpzXVv2cQGbiSuuk'},
                   {michelle: 'https://media.licdn.com/dms/image/C5603AQFsSKGzn7EllA/profile-displayphoto-shrink_800_800/0?e=1560384000&v=beta&t=HLdY6Js3bXCT7XNeFGC8WzM_xMUZK7MAahq6uLGg-60'},
                   {luis: 'https://dl.airtable.com/NNQSNgNDTfeeGuMGk9v4_luis.jpg'}
-                ]
+                ],
+      name: null,
+      age: null,
+      email: null
     }
   }
 
-  addFriend(e) {
+  addFriend = (e) => {
     e.preventDefault();
-    console.log('friend was added');
+    // console.log(e);
+    // console.dir(e.target.friend.value);
+    // console.dir(e.target.email.value);
+    // console.dir(e.target.age.value);
+    console.log(this);
+      // this.setState({
+      //   name: e.target.friend.value,
+      //   age: e.target.age.value,
+      //   email: e.target.email.value
+      // });
+
+      console.log('friend was added');
   }
 
   componentDidMount() {
