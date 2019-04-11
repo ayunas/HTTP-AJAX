@@ -3,6 +3,7 @@ import './App.css';
 import axios from 'axios';
 import { Route } from 'react-router-dom';
 import Friend from './Components/Friend';
+import AddFriend from './Components/AddFriend';
 
 
 
@@ -40,6 +41,7 @@ class App extends Component {
       <header className="App-header">
           These are my Lambda School Colleages!
       </header>
+        <AddFriend/>
         {this.state.friends.map( friend => {
           return <Route path='/' 
           render={ props => <Friend {...props} 
