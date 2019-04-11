@@ -4,9 +4,7 @@ import './components.css';
 
 const Friend = (props) => {
     let id = (props.id - 1);
-    console.log(props.avatars[id]);
     let avatar = props.avatars.map( avatar => Object.values(avatar));
-    console.log(avatar);
 
     return (
         <address>

@@ -24,6 +24,11 @@ class App extends Component {
     }
   }
 
+  addFriend(e) {
+    e.preventDefault();
+    console.log('friend was added');
+  }
+
   componentDidMount() {
     
     axios.get('http://localhost:5000/friends')
@@ -41,7 +46,7 @@ class App extends Component {
       <header className="App-header">
           These are my Lambda School Colleages!
       </header>
-        <AddFriend/>
+        <AddFriend addFriend={this.addFriend}/>
         {this.state.friends.map( friend => {
           return <Route path='/' 
           render={ props => <Friend {...props} 

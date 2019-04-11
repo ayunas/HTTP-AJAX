@@ -26,4 +26,10 @@ img {
     margin: 0 auto;
 }
 
+input {
+
+  display: block;
+  margin: 10px auto;
+
+}
 
