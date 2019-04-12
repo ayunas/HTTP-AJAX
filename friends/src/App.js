@@ -58,6 +58,10 @@ class App extends Component {
       })
   }
 
+  deleteFriend = (id) => {
+    console.log(id);
+  }
+
   componentDidMount() {
     
     axios.get('http://localhost:5000/friends')
@@ -75,15 +79,14 @@ class App extends Component {
       <div className="App">
         <header className="App-header">Lambda Friends</header>
         { path === '/' ? <div></div> : <Link to='/'><button>Add Friend</button></Link> }
-        {/* <Link to='/'><button>Add Friend</button></Link> */}
         <Route path='/' exact render={ props => <AddFriend {...props} addFriend={this.addFriend}/>} />
-        {/* <AddFriend addFriend={this.addFriend}/> */}
         {this.state.friends.map( friend => {
           return <Route path='/friend' 
           render={ props => <Friend {...props} 
           friends={this.state.friends} 
           id={friend.id}
           avatars={this.state.avatars}
+          deleteFriend={this.deleteFriend}
           />} 
           />;
         } )}
