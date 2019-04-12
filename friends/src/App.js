@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
-import { Route } from 'react-router-dom';
+import { Route , Link} from 'react-router-dom';
 import Friend from './Components/Friend';
 import AddFriend from './Components/AddFriend';
 
@@ -56,8 +56,6 @@ class App extends Component {
       .catch( (err) => {
         console.log(err);
       })
-      
-      
   }
 
   componentDidMount() {
@@ -72,9 +70,12 @@ class App extends Component {
   }
 
   render() {
+    const path = this.props.history.location.pathname;
     return (
       <div className="App">
         <header className="App-header">Lambda Friends</header>
+        { path === '/' ? <div></div> : <Link to='/'><button>Add Friend</button></Link> }
+        {/* <Link to='/'><button>Add Friend</button></Link> */}
         <Route path='/' exact render={ props => <AddFriend {...props} addFriend={this.addFriend}/>} />
         {/* <AddFriend addFriend={this.addFriend}/> */}
         {this.state.friends.map( friend => {

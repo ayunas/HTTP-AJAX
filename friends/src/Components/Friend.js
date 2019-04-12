@@ -7,6 +7,7 @@ const Friend = (props) => {
     let avatar = props.avatars.map( avatar => Object.values(avatar));
 
     return (
+        
         <address>
             <div>Name: {props.friends[id].name} </div>
             <div>Age:  {props.friends[id].age}   </div>
