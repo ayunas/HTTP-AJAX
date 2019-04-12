@@ -12,10 +12,10 @@ const Friend = (props) => {
 
     return (
             <address>
-                <FontAwesomeIcon onClick={() => props.deleteFriend(id)}icon={faTimesCircle} size='2x' />
-                <div>Name: {props.friends[id].name} </div>
-                <div>Age:  {props.friends[id].age}   </div>
-                <div>email:  {props.friends[id].email} </div>
+                <FontAwesomeIcon onClick={() => props.deleteFriend(props.id)}icon={faTimesCircle} size='2x' />
+                <div>Name: {props.friend.name} </div>
+                <div>Age:  {props.friend.age}   </div>
+                <div>email:  {props.friend.email} </div>
                 { avatar[id] ? <img src={avatar[id]}/> : <img src={faker.image.avatar()}/> }
             </address>
     )

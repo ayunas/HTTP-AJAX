@@ -60,6 +60,17 @@ class App extends Component {
 
   deleteFriend = (id) => {
     console.log(id);
+    axios.delete(`http://localhost:5000/friends/${id}`)
+    .then(res => {
+      console.log(res);
+      this.setState({
+        friends : res.data
+      })
+    })
+    .catch( err => {
+      console.log(err);
+    })
+    this.props.history.push('/friend');
   }
 
   componentDidMount() {
@@ -83,7 +94,8 @@ class App extends Component {
         {this.state.friends.map( friend => {
           return <Route path='/friend' 
           render={ props => <Friend {...props} 
-          friends={this.state.friends} 
+          friends={this.state.friends}
+          friend={friend} 
           id={friend.id}
           avatars={this.state.avatars}
           deleteFriend={this.deleteFriend}
