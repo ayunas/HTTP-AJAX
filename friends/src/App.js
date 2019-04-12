@@ -32,12 +32,28 @@ class App extends Component {
     // console.dir(e.target.friend.value);
     // console.dir(e.target.email.value);
     // console.dir(e.target.age.value);
-    console.log(this);
+    
       // this.setState({
       //   name: e.target.friend.value,
       //   age: e.target.age.value,
       //   email: e.target.email.value
       // });
+
+      axios
+      .post('http://localhost:5000/friends',{
+        name: e.target.friend.value,
+        age: e.target.age.value,
+        email: e.target.email.value
+      })
+      .then((res) => {
+        console.log(res);
+        this.setState({
+          friends: res.data
+        });
+      })
+      .catch( (err) => {
+        console.log(err);
+      })
 
       console.log('friend was added');
   }
