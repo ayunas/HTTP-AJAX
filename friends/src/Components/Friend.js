@@ -11,8 +11,7 @@ const Friend = (props) => {
             <div>Name: {props.friends[id].name} </div>
             <div>Age:  {props.friends[id].age}   </div>
             <div>email:  {props.friends[id].email} </div>
-            {/* <img src={faker.image.avatar()} alt={faker.image.avatar()}/> */}
-            <img src={avatar[id]}/>
+            { avatar[id] ? <img src={avatar[id]}/> : <img src={faker.image.avatar()}/> }
         </address>
     
     )
