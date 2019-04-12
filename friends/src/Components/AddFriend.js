@@ -3,7 +3,7 @@ import './components.css';
 
 
 const AddFriend = (props) => {
-    
+    console.log('this is <AddFriend/> at /');
     return (
         <form onSubmit={props.addFriend}>
             <input name='friend' placeholder='enter friend name'/>

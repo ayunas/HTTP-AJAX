@@ -38,7 +38,8 @@ class App extends Component {
       //   age: e.target.age.value,
       //   email: e.target.email.value
       // });
-
+      console.log('friend was added');
+      
       axios
       .post('http://localhost:5000/friends',{
         name: e.target.friend.value,
@@ -50,12 +51,13 @@ class App extends Component {
         this.setState({
           friends: res.data
         });
+        this.props.history.push('/friend');
       })
       .catch( (err) => {
         console.log(err);
       })
-
-      console.log('friend was added');
+      
+      
   }
 
   componentDidMount() {
@@ -72,12 +74,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <header className="App-header">
-          These are my Lambda School Colleages!
-      </header>
-        <AddFriend addFriend={this.addFriend}/>
+        <header className="App-header">Lambda Friends</header>
+        <Route path='/' exact render={ props => <AddFriend {...props} addFriend={this.addFriend}/>} />
+        {/* <AddFriend addFriend={this.addFriend}/> */}
         {this.state.friends.map( friend => {
-          return <Route path='/' 
+          return <Route path='/friend' 
           render={ props => <Friend {...props} 
           friends={this.state.friends} 
           id={friend.id}
